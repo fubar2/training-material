@@ -752,7 +752,7 @@
             </ul>
             
 
-            <div><strong> <i class="far fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Last modification:</strong> Jun 4, 2021 </div>
+            <div><strong> <i class="far fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Last modification:</strong> Jun 9, 2021 </div>
         </blockquote>
 
         <div class="container">
@@ -780,10 +780,13 @@
   <li><a href="#hands-on-learning-to-use-the-toolfactory" id="markdown-toc-hands-on-learning-to-use-the-toolfactory">Hands-on: Learning to use the ToolFactory</a>    <ol>
       <li><a href="#toolfactory-tips-and-tricks-illustrated-by-some-of-the-examples" id="markdown-toc-toolfactory-tips-and-tricks-illustrated-by-some-of-the-examples">ToolFactory tips and tricks illustrated by some of the examples.</a></li>
       <li><a href="#limits-and-workarounds" id="markdown-toc-limits-and-workarounds">Limits and workarounds</a></li>
+      <li><a href="#food-for-thought-and-beer" id="markdown-toc-food-for-thought-and-beer">Food for thought and beer.</a></li>
+      <li><a href="#notes-on-the-methods-implemented-in-the-appliance" id="markdown-toc-notes-on-the-methods-implemented-in-the-appliance">Notes on the methods implemented in the Appliance.</a></li>
       <li><a href="#notes-on-some-commonly-reported-issues" id="markdown-toc-notes-on-some-commonly-reported-issues">Notes on some commonly reported issues</a></li>
     </ol>
   </li>
   <li><a href="#your-turn-please-help-improve-this-community-resource" id="markdown-toc-your-turn-please-help-improve-this-community-resource">Your turn! Please help improve this community resource!</a></li>
+  <li><a href="#acknowledgements" id="markdown-toc-acknowledgements">Acknowledgements</a></li>
 </ol>
 
 </blockquote>
@@ -1856,7 +1859,7 @@ samtools sort -o "${bwa_test_commover_bam_output}" temporary_bam_file.bam
 <ul>
   <li>There is another sample bwa_test tool that achieves the same results using a bash script.</li>
   <li>It does not need a command over-ride but is more typing because three positional parameters are named for readability.</li>
-  <li>Bash is probably more familiar to many ToolFactory users than mako templating.</li>
+  <li>Bash is probably more familiar to many ToolFactory users than mako/cheetah templating.</li>
   <li>The effects of templating the command line can usually be achieved using bash or Python at the expense of needing to script the handling of parameters.</li>
 </ul>
 
@@ -1889,36 +1892,104 @@ samtools sort -o "$BAMOUT" temporary_bam_file.bam
 <ul>
   <li>The ToolFactory is an automated, form based code generator.</li>
   <li>A generator can replace manual editing by a skilled developer only in relatively constrained, simple cases.</li>
-  <li>These are common enough in the daily work of most data intensive scientific fields to make a tool generator potentially worth keeping handy.</li>
+  <li>These are common enough in the daily work of most data intensive scientific fields to make a tool generator worth keeping handy.</li>
   <li>For simple scripts and appropriate Conda packages, it’s potentially very useful.</li>
   <li>It is not hard to imagine using a Python wrapper to finesse more complex tools just as bash was used in the <code class="language-plaintext highlighter-rouge">planemo lint</code> example.</li>
   <li>The ToolFactory appliance is a convenient and efficient way to create and maintain <span class="notranslate">Galaxy</span> tools from working scripts.</li>
-  <li>Tools can have command-override and test-override pasted in as in one of the BWA samples. This can solve some of the limitations. However, if the package requires that kind of complexity, it might be better to prepare the wrapper manually.</li>
+  <li>Tools can have command-override and test-override pasted in as in one of the BWA samples.
+    <ul>
+      <li>This can work around some of the current limitations on automation.</li>
+      <li>If the package requires that kind of complexity, it might be better to prepare the wrapper manually.</li>
+    </ul>
+  </li>
 </ul>
+
+<h2 id="food-for-thought-and-beer">Food for thought and beer.</h2>
+
+<ul>
+  <li>Uptake of <span class="notranslate">Galaxy</span> in new quantitative scientific fields requiring complex computing for analyses is arguably rate-limited early on by the availability of domain specific tools.
+    <ul>
+      <li>many scientists routinely write their own analysis code in quantitative disciplines - probably more commonly than in biological domains where <span class="notranslate">Galaxy</span> started.</li>
+      <li>lowering the barriers to those scientists generating their own new tools may speed up adoption of <span class="notranslate">Galaxy</span> in their domains.</li>
+    </ul>
+  </li>
+  <li><span class="notranslate">Galaxy</span> tool wrapping has a well established and growing range of project supported infrastructure.</li>
+  <li>Complex <span class="notranslate">Galaxy</span> tool logic is nearly always implemented using <code class="language-plaintext highlighter-rouge">mako</code> templates embedded in the tool document namespace.
+    <ul>
+      <li>Being in the namespace saves substantial effort compared to the alte<span class="notranslate">rna</span>tive of writing that same logic in a script, as provided by the ToolFactory.
+        <ul>
+          <li>That extra effort is needed to pass those parameters on the command line and then to parse them in the script so the logic can be implemented.</li>
+        </ul>
+      </li>
+      <li>As a result, manual templating is far more efficient of developer time and effort, particularly as conditional parameter and tool complexities grow.
+        <ul>
+          <li>It is widely preferred by dedicated developers.</li>
+          <li>It requires some getting used to for newcomers.</li>
+          <li>Syntax errors are not always pleasant or convenient to debug.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>The ToolFactory may make it easier for some developers new to <span class="notranslate">Galaxy</span> to begin creating the tools needed for scientists from their new domain.
+    <ul>
+      <li>some may prefer a GUI tool form.</li>
+      <li>some may prefer the persistent IDE aspect.</li>
+      <li>some may feel more at home in their favourite scripting language.</li>
+      <li>any scripting language should be capable of implementing equivalent logic.</li>
+    </ul>
+  </li>
+  <li>Negatives include limited complexity and lower time efficiency for complex tools.
+    <ul>
+      <li>Increasingly unwieldy as tool forms grow to many parameters and files.</li>
+    </ul>
+  </li>
+  <li>May be a convenient way to learn by building simple tools before diving into the project supported infrastructure.</li>
+  <li>It extends the range of options available for creating new tools for new scientific domains.</li>
+  <li>Developers can choose the method that suits them best for each new task.
+    <ul>
+      <li>For simple tools, the ToolFactory provides a convenient, pop-up, persistent but easily disposable integrated development environment.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="notes-on-the-methods-implemented-in-the-appliance">Notes on the methods implemented in the Appliance.</h2>
+
+<p>For private desktop applications like the ToolFactory, it is sometimes convenient to be able to do things that normal <span class="notranslate">Galaxy</span> security does not permit, such
+as allowing a tool to update a configuration file to install a new tool. The Appliance uses a readily adaptable model for private desktop applications that
+allow tools to call exposed <code class="language-plaintext highlighter-rouge">rpyc</code> python functions in a companion container. These could, for example, offload calculation to GPU or other hardware and services.
+Please see the documentation on the <a href="https://github.com/fubar2/toolfactory-galaxy-server/tree/main/compose#readme">Appliance’s embedded <code class="language-plaintext highlighter-rouge">rpyc</code> server</a>. The
+model is powerful and requires explicit security bypasses. These are manageable in a private development environment, but mitigate
+strongly against deployment exposed to the public internet.</p>
 
 <h2 id="notes-on-some-commonly-reported-issues">Notes on some commonly reported issues</h2>
 
-<h4 id="first-appliance-job-i-submitted-container-remains-grey-or-running-for-a-long-time---is-it-broken">First Appliance job I submitted container remains grey or running for a long time - is it broken?</h4>
+<h4 id="first-job-i-submitted-remains-grey-or-running-for-a-long-time---is-it-broken">First job I submitted remains grey or running for a long time - is it broken?</h4>
 
 <ul>
   <li>Check with <code class="language-plaintext highlighter-rouge">top</code> or your system monitor - if Conda is running, things are working but it’s slow the first time a dependency is installed.</li>
   <li>The first run generally takes a while to install all the needed dependencies.</li>
-  <li>Subsequent runs should start immediately</li>
-  <li>Installing new Conda dependencies also takes time so tools that have new Conda packages will take longer to generate as they must be installed before the tool can be tested.</li>
-  <li>In general, a complete ToolFactory job usually takes less than a minute - planemo has to build and tear down a new <span class="notranslate">Galaxy</span> for generating test results and then
-again for testing properly. Longer if the tool has Conda dependencies….</li>
+  <li>Subsequent runs should start immediately with all dependencies already in place.</li>
+  <li>Installing new Conda dependencies just takes time so tools that have new Conda packages will take longer to run the first time if they must be installed.</li>
+  <li>In general, a <code class="language-plaintext highlighter-rouge">planemo_test</code> job usually takes around a minute - planemo has to build and tear down a new <span class="notranslate">Galaxy</span> for generating test results and then
+again for testing properly. Longer if the tool has Conda dependencies.</li>
+  <li>The very first test in a fresh appliance may take 5 minutes so be patient.</li>
 </ul>
 
 <h4 id="my-rscript-generates-a-strange-r-error-on-stdout-about-an-invalid-operation-on-a-closure-called-args-">My Rscript generates a strange R error on STDOUT about an invalid operation on a closure called ‘args’ ?</h4>
 
 <ul>
-  <li>Does your code create the args vector at the start of the script with something like <code class="language-plaintext highlighter-rouge">args = commandArgs(trailingOnly=TRUE)</code> before Rscript tries to access args[1] ?</li>
+  <li>Did your code declare the <code class="language-plaintext highlighter-rouge">args vector</code> with something like <code class="language-plaintext highlighter-rouge">args = commandArgs(trailingOnly=TRUE)</code> before it tried to access args[1] ?</li>
+  <li>See the plotter tool for a sample</li>
 </ul>
 
 <h4 id="i-want-to-use-a-collection-for-outputs-but-it-always-passes-the-test-even-when-the-script-fails-what-gives">I want to use a collection for outputs but it always passes the test even when the script fails. What gives?</h4>
 
 <ul>
-  <li>Unfortunately, collections are tricky to generate automated tests for. The contents are never known until the tool has been run.</li>
+  <li>Collections are tricky for generating tests.
+    <ul>
+      <li>The contents appear only after the tool has been run and even then may vary with settings.</li>
+    </ul>
+  </li>
   <li>A manual test override is currently the only way to test collections properly.</li>
   <li>Automation is hard. If you can help, pull requests are welcomed.</li>
   <li>Until it’s automated, please take a look at the plotter sample.</li>
@@ -1953,16 +2024,44 @@ interfering with it’s own independent repository update. The result is not pre
   <li>Allowing two tests to run at once has proven to be unstable so the Appliance is currently limited to one.</li>
 </ul>
 
+<h4 id="pip-hangs-inside-the-docker-container-when-i-have-my-vpn-turned-on">pip hangs inside the Docker container when I have my VPN turned on</h4>
+
+<ul>
+  <li>This affects Ross with a Private Internet Access client running. Other VPNs may be similarly affected. If the VPN is running, docker containers will
+fail to download dependencies with timeouts on the pip web site. No idea why - some strange DNS problem - but I turn mine off and that solves the problem for me.
+Toolfactory timeouts, particularly test timeouts may be related - check your logs carefully or just try turning your VPN off.
+Your mileage may vary…</li>
+</ul>
+
+<hr />
+
 <h1 id="your-turn-please-help-improve-this-community-resource">Your turn! Please help improve this community resource!</h1>
 <ul>
   <li>tell Ross (<a href="mailto:ross.lazarus@gmail.com">ross.lazarus@gmail.com</a>) what went well and what could be improved for the benefit of future students</li>
   <li>This tutorial has had almost no testing yet.</li>
-  <li>It is in pre-review.</li>
-  <li>A PR will soon appear once we get the showstoppers sorted.</li>
   <li>Please use the fork at <a href="https://github.com/fubar2/training-material">fubar2/training-material</a> for issues and pull requests for the nonce.</li>
   <li>The ToolFactory has had little testing in the present form so expect many bugs</li>
   <li>If the ToolFactory works well for you, please tell your friends.</li>
   <li>If you find bugs, please tell me by raising an issue at <a href="https://github.com/fubar2/toolfactory">fubar2/toolfactory</a>, or better, a pull request with the fix :)</li>
+</ul>
+
+<h1 id="acknowledgements">Acknowledgements</h1>
+
+<p>This tutorial is based on the work of thousands of individual contributers to the <span class="notranslate">Galaxy</span> project over the last 15 years or so.
+Thanks all! It has been a lot of fun.</p>
+
+<p>Special thanks to:</p>
+
+<ul>
+  <li><a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/hexylena" alt="Helena Rasche" />Helena Rasche</a> for
+    <ul>
+      <li>review and contribution to the tutorial and associated code.</li>
+      <li>the vision of instant installation of generated tools for developer feedback.</li>
+      <li>elegantly generated lint-free XML provided by <a href="https://github.com/hexylena/galaxyxml"><span class="notranslate">galaxy</span>ml code</a></li>
+    </ul>
+  </li>
+  <li><a href="/training-material/hall-of-fame/bgruening/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/bgruening" alt="Björn Grüning" />Björn Grüning</a> for making it easy to pop-up and flavour <a href="https://github.com/bgruening/docker-galaxy-stable">docker-<span class="notranslate">galaxy</span>-stable</a></li>
+  <li><a href="/training-material/hall-of-fame/mvdbeek/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/mvdbeek" alt="Marius van den Beek" />Marius van den Beek</a> for thoughtful comments on the role of the ToolFactory that helped motivate the tutorial.</li>
 </ul>
 
 
@@ -2063,7 +2162,7 @@ interfering with it’s own independent repository update. The result is not pre
     title = "ToolFactory: Generating Tools From More Complex Scripts (Galaxy Training Materials)",
     year = "2021",
     month = "06",
-    day = "04"
+    day = "09"
     url = "\url{/training-material/topics/dev/tutorials/tool-generators-advanced/tutorial.html}",
     note = "[Online; accessed TODAY]"
 }
