@@ -710,7 +710,7 @@
             </ul>
             
 
-            <div><strong> <i class="far fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Last modification:</strong> Jun 9, 2021 </div>
+            <div><strong> <i class="far fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Last modification:</strong> Jun 12, 2021 </div>
         </blockquote>
 
         <div class="container">
@@ -720,12 +720,22 @@
                     <nav id="toc" data-toggle="toc" class="sticky-top"></nav>
                 </div>
                 <div class="col-sm-10">
-                    <p>This tutorial is for developers and researchers routinely developing their own analysis scripts using bash, Python, Perl, Rscript or other scripting languages.
-It shows a convenient way to bridge the gap between a working command line script and installing a real tool that “wraps” that script as a tool in <span class="notranslate">Galaxy</span>.
-The ToolFactory is a <span class="notranslate">Galaxy</span> tool, run in the usual <span class="notranslate">Galaxy</span> tool interface. It is distributed as the ToolFactory Appliance, ready to run on a local linux workstation or high end laptop using Docker.</p>
+                    <p>The Toolfactory and these tutorials are for developers and researchers learning about <span class="notranslate">Galaxy</span>, who routinely develop their own analysis scripts using
+bash, Python, Perl, Rscript or other common scientific scripting languages. The tutorials show a convenient way to bridge the gap between a
+working command line script and a new tool that “wraps” that script so users can use it like any other tool in <span class="notranslate">Galaxy</span>.</p>
 
-<p>This first tutorial is an introduction. It shows how ToolFactory generates a <code class="language-plaintext highlighter-rouge">Hello World!</code> <span class="notranslate">Galaxy</span> tool and how the Appliance can be installed locally.
-The reader will soon learn if it might be adapted to their work. If so, an <a href="/training-material/topics/dev/tutorials/tool-generators-advanced/tutorial.html">Advanced ToolFactory tutorial</a> is
+<p>The ToolFactory is a <span class="notranslate">Galaxy</span> tool. Tools are constructed through the normal <span class="notranslate">Galaxy</span> interface when it is run. It is distributed as the ToolFactory Appliance,
+ready to run on a developer linux workstation using Docker. Generated tools are <em>immediately installed</em> and ready to run so you can see
+what the end user will see. Jobs can be re-run to edit and update generated tools, so <span class="notranslate">Galaxy</span> becomes an integrated development environment for <span class="notranslate">Galaxy</span> tools.</p>
+
+<p>A<a href="https://youtu.be//DK1eKz5TRs4"><code class="language-plaintext highlighter-rouge">Hello <span class="notranslate">Galaxy</span>!</code> using the ToolFactory demonstration</a> is available if you’d like to see a walk-through of some of
+the hands-on material in this tutorial. You can see whether it looks useful for your work before you start the detailed material below.</p>
+
+<p>This first tutorial is a slow introduction. For some developers, it may be too slow and the second tutorial may be a better place to start.
+ This one steps in some detail through the process of using the ToolFactory
+to generate <code class="language-plaintext highlighter-rouge">Hello World!</code> style simple demonstration <span class="notranslate">Galaxy</span> tools, and how the Appliance can be installed locally.</p>
+
+<p>The reader will soon learn if it might be adapted to their work. If so, an <a href="/training-material/topics/dev/tutorials/tool-generators-advanced/tutorial.html">Advanced ToolFactory tutorial</a> is
 available if the material here is relevant to your needs and you would like to learn more details about the different kinds of tools and features the ToolFactory offers.</p>
 
 <p>Experienced <span class="notranslate">galaxy</span> tool developers already have specialised tools and training to suit their needs so may not gain much from this material.
@@ -762,15 +772,17 @@ may find the ToolFactory appliance useful for familiarising themselves with tool
 
 <h1 id="tools-tool-wrappers-and-the-toolfactory-in-galaxy">Tools, tool wrappers and the ToolFactory in <span class="notranslate">Galaxy</span>.</h1>
 
-<p>Tools are the fundamental building blocks for analyses in <span class="notranslate">Galaxy</span>. Thousands are available in the project tool library from many different kinds of science. <span class="notranslate">Galaxy</span>
+<p>Tools are the fundamental building blocks for analyses in <span class="notranslate">Galaxy</span>. Thousands are available in the <a href="https://toolshed.g2.bx.psu.edu">project tool library</a> from
+many different kinds of science. <span class="notranslate">Galaxy</span>
 tools can be created from almost any Linux command line software packages or interpreter scripts. What happens
 at tool execution is decoupled from the framework itself, so the framework is agnostic to scientific discipline or coding language.
-This is one reason for rapid uptake in new data intensive scientific areas. All it takes is a set of discipline specific tools to bring a whole new community
-of scientists into <span class="notranslate">Galaxy</span>.</p>
+This is one reason for rapid uptake in new data intensive scientific areas. In many cases, sets of discipline specific tools are being developed and these
+are attracting whole new communities of scientists into <span class="notranslate">Galaxy</span>.</p>
 
-<p>Tool execution is tightly constrained and secured. User supplied parameters and data inputs exposed on the tool form are the only things that can be changed
+<p>Tool execution is tightly constrained and secured. Tool form exposed user controlled parameters and data inputs are the only things that can be changed
 before execution. Everything else is fixed. This is ideal for non-programmer <span class="notranslate">Galaxy</span> users who rely on prepared tools for their work. Tools are
-utterly predictable to the point of being as reproducible as any complex computing component can be and this is one of the strengths of the <span class="notranslate">Galaxy</span> framework.</p>
+utterly predictable to the point of being about as reproducible as any useful complex computing component is likely to be.
+This is one of the strengths of the <span class="notranslate">Galaxy</span> framework for users requiring reproducible and shareable scientific analyses.</p>
 
 <h2 id="galaxy-interactive-tools-and-interactive-environments-gxitgie"><span class="notranslate">Galaxy</span> Interactive Tools and Interactive Environments (GxIT/GIE)</h2>
 
@@ -790,10 +802,10 @@ without using <span class="notranslate">Galaxy</span>.</p>
 
 <p>The <span class="notranslate">Galaxy</span> developers support extensive software infrastructure for manually creating new tools including Planemo and the new <span class="notranslate">Galaxy</span> language server.
 These are complex and powerful with substantial
-learning curves but can be used to turn almost any command line software package into a tool.</p>
+learning curves but can be used to turn almost any software package into a tool.</p>
 
-<p>For those new to <span class="notranslate">Galaxy</span>, in many simple cases, it may be possible to generate a new tool “wrapping” that script in a few minutes, using a
-specialised <span class="notranslate">Galaxy</span> tool for developers that generates tools from scripts.</p>
+<p>For those new to <span class="notranslate">Galaxy</span>, in many simple cases, it may be possible to generate a new tool “wrapping” a script in a few minutes, using a
+specialised <span class="notranslate">Galaxy</span> tool for developers that generates tools.</p>
 
 <p>This tutorial introduces that unusual tool.</p>
 
@@ -821,6 +833,8 @@ and for developing new tools for new kinds of scientists using <span class="notr
         <li>Usefulness will depend on sufficient hardware. Plenty of cores, RAM and disk storage are needed.</li>
         <li>On a modern workstation or well-endowed laptop, it will perform well out of the box.</li>
         <li>It will struggle on older consumer hardware with limited RAM and CPU capacity.</li>
+        <li>It is suitable only for development in a private deployment.</li>
+        <li>Production is best done on a professionally maintained service, but please, not a public one.</li>
       </ul>
     </li>
   </ul>
@@ -942,9 +956,6 @@ more useful tasks. This is the simplest case of a very useful generic model for 
 Bash is used here but any scripting language available in Conda could probably be used.</p>
 
 <h3 id="putting-the-plan-into-action-using-the-toolfactory">Putting the plan into action using the ToolFactory</h3>
-
-<p>Watch a 6 minute <a href="https://drive.google.com/file/d/1xpkcVGQ0jRdG78Kt-qLwqeFpE3RnSRsK/view?usp=sharing"><code class="language-plaintext highlighter-rouge">Hello world</code> demonstration video</a>
-(Apologies for the poor quality - will try to make a shorter one.)</p>
 
 <p>The form collects all the information needed for a new <span class="notranslate">Galaxy</span> tool. It is long and complex as a result, particularly with many repeated form elements for more complex tools.
 Much of what is collected is used to construct a command line for the script when the generated tool runs.
@@ -1458,6 +1469,8 @@ and are not widely available, particularly in scientific fields coming to <span 
   <li>Tools can have command-override and test-override pasted in as in one of the BWA samples.
     <ul>
       <li>This can solve some of the limitations but if it is needed, it might be better to prepare the wrapper manually if a skilled developer is available.</li>
+      <li>Any logic in the <code class="language-plaintext highlighter-rouge">&lt;command&gt;</code> section can probably always be replaced by equivalent code in a script at the cost of time and effort compared to templating.</li>
+      <li>Other aspects of tool logic such as output filters based on other parameter values can only be implemented in the wrapper document, not in a tool script.</li>
     </ul>
   </li>
   <li>The ToolFactory can help new scientists and developers to quickly get some simple tools working for their colleagues while awaiting help with the complex ones.</li>
@@ -1578,7 +1591,7 @@ Thanks all! It has been a lot of fun.</p>
     title = "ToolFactory: Generating Tools From Simple Scripts (Galaxy Training Materials)",
     year = "2021",
     month = "06",
-    day = "09"
+    day = "12"
     url = "\url{/training-material/topics/dev/tutorials/tool-generators/tutorial.html}",
     note = "[Online; accessed TODAY]"
 }
