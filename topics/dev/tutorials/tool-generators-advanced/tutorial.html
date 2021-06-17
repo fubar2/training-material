@@ -752,7 +752,7 @@
             </ul>
             
 
-            <div><strong> <i class="far fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Last modification:</strong> Jun 12, 2021 </div>
+            <div><strong> <i class="far fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Last modification:</strong> Jun 17, 2021 </div>
         </blockquote>
 
         <div class="container">
@@ -766,18 +766,14 @@
   <h3 id="agenda">Agenda</h3>
 
 <ol id="markdown-toc">
-  <li><a href="#background-and-design-of-the-training-material" id="markdown-toc-background-and-design-of-the-training-material">Background and design of the training material</a>    <ol>
-      <li><a href="#the-toolfactory-appliance-a-pop-up-private-galaxy-for-scientists-and-developers-who-write-command-line-scripts-in-their-work" id="markdown-toc-the-toolfactory-appliance-a-pop-up-private-galaxy-for-scientists-and-developers-who-write-command-line-scripts-in-their-work">The ToolFactory Appliance: A pop-up private <span class="notranslate">Galaxy</span> for scientists and developers who write command line scripts in their work.</a></li>
+  <li><a href="#welcome-background-and-a-users-guide-to-this-training-material" id="markdown-toc-welcome-background-and-a-users-guide-to-this-training-material">Welcome, background and a user’s guide to this training material</a>    <ol>
+      <li><a href="#the-toolfactory-appliance-for-scientists-and-developers-who-write-command-line-scripts-in-their-work" id="markdown-toc-the-toolfactory-appliance-for-scientists-and-developers-who-write-command-line-scripts-in-their-work">The ToolFactory Appliance for scientists and developers who write command line scripts in their work.</a></li>
       <li><a href="#limits-and-scope" id="markdown-toc-limits-and-scope">Limits and scope</a></li>
-      <li><a href="#much-can-be-learned-in-the-process-of-trying-things-out-in-the-toolfactory-that-will-help-acquire-skills-for-manually-building-tools" id="markdown-toc-much-can-be-learned-in-the-process-of-trying-things-out-in-the-toolfactory-that-will-help-acquire-skills-for-manually-building-tools">Much can be learned in the process of trying things out in the ToolFactory that will help acquire skills for manually building tools.</a></li>
     </ol>
   </li>
   <li><a href="#getting-your-hands-on-a-toolfactory-appliance-for-some-hands-on-training" id="markdown-toc-getting-your-hands-on-a-toolfactory-appliance-for-some-hands-on-training">Getting your hands on a ToolFactory Appliance for some hands-on training.</a>    <ol>
       <li><a href="#installation" id="markdown-toc-installation">Installation</a></li>
-    </ol>
-  </li>
-  <li><a href="#running-the-toolfactory" id="markdown-toc-running-the-toolfactory">Running the ToolFactory</a>    <ol>
-      <li><a href="#generating-new-tools---what-happens-when-you-press-execute-on-a-valid-toolfactory-form" id="markdown-toc-generating-new-tools---what-happens-when-you-press-execute-on-a-valid-toolfactory-form">Generating new tools - what happens when you press <code class="language-plaintext highlighter-rouge">execute</code> on a valid ToolFactory form?</a></li>
+      <li><a href="#generating-new-tools---what-happens-when-you-press-execute-on-a-completed-toolfactory-form" id="markdown-toc-generating-new-tools---what-happens-when-you-press-execute-on-a-completed-toolfactory-form">Generating new tools - what happens when you press <code class="language-plaintext highlighter-rouge">execute</code> on a completed ToolFactory form?</a></li>
     </ol>
   </li>
   <li><a href="#toolfactory-functional-documentation---the-demonstration-tools" id="markdown-toc-toolfactory-functional-documentation---the-demonstration-tools">ToolFactory functional documentation - the demonstration tools.</a></li>
@@ -802,15 +798,39 @@
 
 <hr />
 
-<h1 id="background-and-design-of-the-training-material">Background and design of the training material</h1>
+<h1 id="welcome-background-and-a-users-guide-to-this-training-material">Welcome, background and a user’s guide to this training material</h1>
 
-<p>Only <span class="notranslate">Galaxy</span> users who write scripts are likely to be reading this profitably. It is assumed that the reader is capable of scripting their own
-analyses, and so would like to learn more about what capabilities and limits the ToolFactory has so they can figure out if it might be useful.
-This training material will introduce some ToolFactory features and will show how some of the limitations can be worked around.
+<p><span class="notranslate">Galaxy</span> users who write and share scripts useful for scientific analyses are likely to be reading this material, perhaps after seeing the “Hello <span class="notranslate">Galaxy</span>”
+demonstration. It was written to help you find out about the capabilities and limits of the ToolFactory by experimenting with it yourself.
+It is hoped that this advanced tutorial will introduce some features that potentially make the ToolFactory useful in your work.</p>
+
+<p>This training material is unlike most other GTN tutorials. There is no specific tool building curriculum on offer because it is hard to know how
+that might be orgranised. The introductory <code class="language-plaintext highlighter-rouge">Hello <span class="notranslate">Galaxy</span></code> demonstrations and
+hands-on are the only formal attempt at explaining any tool’s structure and construction.</p>
+
+<p>The reason is that tools are mostly scientific domain specific, while the ToolFactory is applicable to any domain where <span class="notranslate">Galaxy</span> might be useful.
+Developers and the tools they might be interested in creating are so diverse
+that it was decided to provide the infrastructure and environment to encourage “learning by doing”.
+The result of editing and regenerating a tool is immediately available in the ToolFactory for evaluation to encourage self-guided exploration.
+Developers are free to explore their own specific requirements.</p>
+
+<p>Simple demonstration tools are provided. The are both the functional documentation, and useful models to adjust and explore.
+They each address a specific feature (such as the <code class="language-plaintext highlighter-rouge">plotter</code> illustrating collections),
+and they illustrate some of the styles of tool building supported by the ToolFactory. The <code class="language-plaintext highlighter-rouge">sed</code> example does not use a script. All the others do.
+The ToolFactory is likely to be more useful for scripts than directly driving Conda packages. Many Conda package interfaces have requirements that the ToolFactory cannot
+currently address. Those will probably always require a skilled tool document developer. Conda dependencies requiring minimal conditional parameter
+logic for the construction of a command line or for adjusting outputs, such as the <code class="language-plaintext highlighter-rouge">sed</code> example, may be more tractable.</p>
+
+<p>This training material will introduce some ToolFactory features and will show how some of the limitations can be worked around.
 The introductory tutorial walked through some simple tools. This advanced tutorial shows some examples but the focus is on self-guided
 exploration of the sample tools to see how they might be used in your work.</p>
 
-<h2 id="the-toolfactory-appliance-a-pop-up-private-galaxy-for-scientists-and-developers-who-write-command-line-scripts-in-their-work">The ToolFactory Appliance: A pop-up private <span class="notranslate">Galaxy</span> for scientists and developers who write command line scripts in their work.</h2>
+<h2 id="the-toolfactory-appliance-for-scientists-and-developers-who-write-command-line-scripts-in-their-work">The ToolFactory Appliance for scientists and developers who write command line scripts in their work.</h2>
+
+<p>The ToolFactory is distributed as a Docker appliance, created as a “flavour” of the widely used <code class="language-plaintext highlighter-rouge">docker-<span class="notranslate">galaxy</span>-stable</code> infrastructure, so it includes a fully functional
+<span class="notranslate">Galaxy</span> server. New tools can be generated locally or they can be added from any <span class="notranslate">Toolshed</span>. This is intended to make it easy to create
+tailored private development <span class="notranslate">Galaxy</span> servers, so new tools, analyses and workflows can be developed to help speed uptake in areas of data-intensive science where
+few <span class="notranslate">Galaxy</span> tools are currently available.</p>
 
 <p>The ToolFactory automates much of the work needed to prepare a new <span class="notranslate">Galaxy</span> tool using information provided by the script writer
 on a <span class="notranslate">Galaxy</span> tool form. It can generate XML to wrap any simple script that runs correctly on the linux command line with some small test input samples. This is potentially
@@ -824,13 +844,9 @@ labels and help, can be updated by editing the form. When the updated tool is ge
 
 <p>Tools can be tested and prepared for export as <span class="notranslate">toolshed</span> ready archives when the developer is ready using a companion <code class="language-plaintext highlighter-rouge">planemo_test</code> tool in the ToolFactory tool section.</p>
 
-<p>The ToolFactory is distributed as a convenient Docker appliance, based on a fully functional <span class="notranslate">Galaxy</span> server. Tools can be generated locally or added from a <span class="notranslate">Toolshed</span> to create a
-tailored <span class="notranslate">Galaxy</span> for analyses and for developing workflows for areas of data-intensive science where <span class="notranslate">Galaxy</span> tools are not yet available.
-The appliance is an ideal way for any data intensive scientist to quickly learn how <span class="notranslate">Galaxy</span> tools work, in preparation for the more flexible and efficient
+<p>The Appliance is a pop-up platform for a data intensive scientist to quickly learn how <span class="notranslate">Galaxy</span> tools work, in preparation for the more flexible and efficient
 <span class="notranslate">Galaxy</span> project supported manual tool building infrastructure. At the same time, they can wrap and refine new tools from existing scripts
-on their own workstations, preparing them for sharing and deployment to production servers.</p>
-
-<p>It also may be useful as a private sandbox for learning about tools and <span class="notranslate">Galaxy</span> administration or experimenting with code development. In the worst possible scenario where the
+on their own workstations, preparing them for sharing and deployment to production servers. It also may be useful as a private sandbox for learning about tools and <span class="notranslate">Galaxy</span> administration or experimenting with code development. In the worst possible scenario where the
 system is damaged, the Appliance can be rebuilt from scratch in a few minutes.</p>
 
 <blockquote class="tip">
@@ -855,7 +871,8 @@ system is damaged, the Appliance can be rebuilt from scratch in a few minutes.</
       <li>It takes only a few minutes to install and can be completely removed even more quickly when no longer useful.</li>
       <li>It lacks the data backup and security provided by an institutional <span class="notranslate">Galaxy</span> service.</li>
       <li>The user is entirely responsible for securing and backing up all their work.</li>
-      <li>It is not recommended for production use.</li>
+      <li>It is not recommended for production and is not supported by the <span class="notranslate">Galaxy</span> developers.</li>
+      <li>A well endowed modern workstation or laptop with plenty of cores, disk and RAM is needed. Older commodity hardware may struggle.</li>
     </ul>
   </li>
   <li>The ToolFactory works best wrapping simple R/Bash/Python and other interpreted scripts, with a few user supplied parameters and a few I/O history files.</li>
@@ -871,8 +888,16 @@ or other complex tool XML constructs outside the <code class="language-plaintext
   </li>
   <li>Compared to the more usual linux shell and text editor, the ToolFactory appliance is a rather clumsy way to debug scripts.
     <ul>
-      <li><strong>Starting a new ToolFactory tool with a know good command line and data</strong> is strongly recommended. You will know exactly what to expect from the tool test for a first sanity check.</li>
-      <li>Corrolary: Unless there is a working script that needs to be wrapped into a <span class="notranslate">toolshed</span>-ready <span class="notranslate">Galaxy</span> tool, the ToolFactory is of little use.</li>
+      <li>Starting a new ToolFactory tool with a know good command line and data is strongly recommended.
+        <ul>
+          <li>You will know exactly what to expect from the tool test for a first sanity check.</li>
+        </ul>
+      </li>
+      <li>Corrolary: Unless there is a working script that needs to be wrapped into a <span class="notranslate">toolshed</span>-ready <span class="notranslate">Galaxy</span> tool, the ToolFactory is of little use
+        <ul>
+          <li>other than for learning about <span class="notranslate">Galaxy</span> tools.</li>
+        </ul>
+      </li>
     </ul>
   </li>
   <li>The ToolFactory Appliance is for developers and code-writing scientists not yet familiar with the more flexible and complex manual tools, and who need to wrap scripts that are simple
@@ -881,21 +906,14 @@ enough for the ToolFactory.
       <li>Compared to the more flexible manual <span class="notranslate">Galaxy</span> tool development software, there is far less to learn to get up to speed with a form driven,
 automated code generator in a tailored, readily deployed appliance.</li>
       <li>The cost of this convenience is that ToolFactory is limited to a subset of simple script and package wrappers.</li>
-      <li>
-        <h2 id="much-can-be-learned-in-the-process-of-trying-things-out-in-the-toolfactory-that-will-help-acquire-skills-for-manually-building-tools">Much can be learned in the process of trying things out in the ToolFactory that will help acquire skills for manually building tools.</h2>
-      </li>
+      <li>Much can be learned in the process of trying things out in the ToolFactory that will help acquire skills for manually building tools.</li>
     </ul>
   </li>
 </ul>
 
-<h1 id="getting-your-hands-on-a-toolfactory-appliance-for-some-hands-on-training">Getting your hands on a ToolFactory Appliance for some hands-on training.</h1>
+<hr />
 
-<ul>
-  <li>If you found the introductory material relevant to your own needs, you may wish to start the DIY/hands-on part of the tutorial that follows.</li>
-  <li>Install your own ToolFactory Appliance as described below.</li>
-  <li>Start exploring the provided samples to figure out if and how it might help your work.</li>
-  <li>Tutorial material that follows <strong>can only be completed with a working ToolFactory</strong>.</li>
-</ul>
+<h1 id="getting-your-hands-on-a-toolfactory-appliance-for-some-hands-on-training">Getting your hands on a ToolFactory Appliance for some hands-on training.</h1>
 
 <h2 id="installation">Installation</h2>
 
@@ -910,19 +928,16 @@ automated code generator in a tailored, readily deployed appliance.</li>
   </ul>
 </blockquote>
 
-<hr />
-
-<h1 id="running-the-toolfactory">Running the ToolFactory</h1>
-
 <blockquote class="notranslate hands_on">
   <h3 id="hands_on-hands-on-launching-the-appliance"><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Hands-on: Launching the Appliance</h3>
 
   <blockquote class="warning">
     <h3 id="warning-pull-the-images-first-as-shown-below-to-save-time"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i><span class="visually-hidden">warning</span> <code class="language-plaintext highlighter-rouge">Pull</code> the images first as shown below to save time.</h3>
 
-    <p>If they are not found locally the first time you run <code class="language-plaintext highlighter-rouge">docker-compose up</code>, docker will build them, taking much, much, much longer.</p>
+    <p>If they are not found locally the first time you run <code class="language-plaintext highlighter-rouge">docker-compose up</code>, docker will build them, taking half an hour or more instead of a couple of minutes.</p>
 
   </blockquote>
+
   <ol>
     <li>
       <p><a href="https://docs.docker.com/engine/install/">Install Docker</a> following the appropriate instructions for your platform.</p>
@@ -960,7 +975,7 @@ docker-compose up
           </li>
           <li>Expect a few minutes for the pull to complete.</li>
           <li>Expect another 5 to 10 minutes to complete the first startup. Subsequent starts are much faster but a lot has to be done the first time.</li>
-          <li>The docker containers may not fit or run well on an underpowered machine. Multiple CPU cores, 8GB of RAM and fast disk are needed for an enjoyable appliance.</li>
+          <li>The docker containers may not fit or run well on an underpowered machine. Multiple CPU cores, 8+GB of RAM and fast disk are needed for an enjoyable appliance.</li>
           <li>The demonstration history will only be available after logging in with the administrator credentials - <code class="language-plaintext highlighter-rouge">admin@<span class="notranslate">galaxy</span>.org</code> and password <code class="language-plaintext highlighter-rouge">password</code>. Check your histories if the smaller data-only history appears when you log in.</li>
           <li>Change your admin password.</li>
           <li>It is important that your appliance is not accessible to any potential miscreants on the local or public internet.</li>
@@ -1009,7 +1024,7 @@ Check for Conda or other processes if things seem stuck.</p>
       </blockquote>
     </li>
     <li>
-      <p>Later, after you’ve finished this tutorial:</p>
+      <p>Later, after you’ve finished:</p>
 
       <p>To safely shut the appliance down</p>
       <ul>
@@ -1032,11 +1047,11 @@ Check for Conda or other processes if things seem stuck.</p>
 <blockquote class="notranslate hands_on">
   <h3 id="hands_on-hands-on-brief-guide-to-toolfactory-appliance-operation"><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Hands-on: Brief Guide to ToolFactory Appliance Operation</h3>
 
-  <h2 id="generating-new-tools---what-happens-when-you-press-execute-on-a-valid-toolfactory-form">Generating new tools - what happens when you press <code class="language-plaintext highlighter-rouge">execute</code> on a valid ToolFactory form?</h2>
+  <h2 id="generating-new-tools---what-happens-when-you-press-execute-on-a-completed-toolfactory-form">Generating new tools - what happens when you press <code class="language-plaintext highlighter-rouge">execute</code> on a completed ToolFactory form?</h2>
 
   <ul>
-    <li>The form is processed and a new tool generated.</li>
-    <li>The new tool is installed to the Appliance in the <code class="language-plaintext highlighter-rouge">ToolFactory Generated Tools</code> tool menu
+    <li>The form is processed and a new tool XML is generated, appearing in the history.</li>
+    <li>The generated tool is installed in the Appliance. It will appear in the <code class="language-plaintext highlighter-rouge">ToolFactory Generated Tools</code> tool menu.
       <ul>
         <li>The tool generation process takes a few seconds.</li>
         <li>The <code class="language-plaintext highlighter-rouge">Home</code> or <code class="language-plaintext highlighter-rouge">Analysis</code> tab should be selected so the screen is refreshed after building.
@@ -1046,21 +1061,21 @@ Check for Conda or other processes if things seem stuck.</p>
         </li>
       </ul>
     </li>
-    <li>Choose the names thoughtfully and be warned: there are no checks on tool names</li>
-    <li>Any existing installed tool with the same name will be overwritten permanently.</li>
+    <li>Choose tool names thoughtfully and be warned: <em>there are no checks on tool name duplicates</em></li>
+    <li>Any existing installed tool XML with the same name will be overwritten permanently.</li>
     <li>The history will retain all the generating jobs if you accidentally overwrite a tool.</li>
     <li>
       <p>Rerun the job and adjust the form. Rinse and repeat until ready.</p>
     </li>
     <li>
-      <p>Note that the generated tool has not been run to generate test outputs, so the archive is not complete although the installed tool may work fine.</p>
+      <p>Note that the generated tool has no test outputs yet so the test is broken until the tool is “finalised” with the companion tool tester.</p>
     </li>
     <li>To generate a “proper” tested <span class="notranslate">toolshed</span> archive, execute the <code class="language-plaintext highlighter-rouge">planemo_test</code> tool from the ToolFactory tool submenu after selecting the relevant tool XML from the history.</li>
-    <li>The appliance will run Planemo to generate sample outputs, then run a real test.
+    <li>The appliance will run <code class="language-plaintext highlighter-rouge">planemo lint</code>, then <code class="language-plaintext highlighter-rouge">planemo test</code> to generate sample outputs, then again for final “real” test.
       <ul>
-        <li>An archive containing the tool with proper test will be returned with a collection containing the testing run log, planemo lint and test reports.</li>
+        <li>A finalised archive will be available in the history after a while - testing takes time - with a collection containing the test run log, planemo lint and test reports.</li>
         <li>The archive can be downloaded and shared in the usual ways. It is a normal <span class="notranslate">Galaxy</span> tool that wraps the supplied script and contains a test to validate it.</li>
-        <li>It is in <code class="language-plaintext highlighter-rouge">..compose/export/<span class="notranslate">galaxy</span>/testedTFtools/[tool name]</code> on your workstation because that is mounted as a volume into the container.</li>
+        <li>It will also be found in the <code class="language-plaintext highlighter-rouge">..compose/export/<span class="notranslate">galaxy</span>/testedTFtools/[tool name]</code> on your workstation, mounted as a volume in the container.</li>
       </ul>
     </li>
   </ul>
@@ -2236,7 +2251,7 @@ Thanks all! It has been a lot of fun.</p>
     title = "ToolFactory: Generating Tools From More Complex Scripts (Galaxy Training Materials)",
     year = "2021",
     month = "06",
-    day = "12"
+    day = "17"
     url = "\url{/training-material/topics/dev/tutorials/tool-generators-advanced/tutorial.html}",
     note = "[Online; accessed TODAY]"
 }
