@@ -172,6 +172,9 @@
                 <label data-value="rainbow" class="btn btn-secondary">
                     <input type="radio" name="options" id="rainbow" autocomplete="off"> Rainbow
                 </label>
+                <label data-value="progress" class="btn btn-secondary">
+                    <input type="radio" name="options" id="progress" autocomplete="off">🏳️‍🌈
+                </label>
                 <label data-value="halloween" class="btn btn-secondary">
                     <input type="radio" name="options" id="halloween" autocomplete="off"> 🎃
                 </label>
@@ -181,6 +184,26 @@
             </div>
 
         </div>
+
+        <div class="dropdown-item">
+            <div>
+                <i class="fas fa-history" aria-hidden="true"></i><span class="visually-hidden">galaxy-rulebuilder-history</span> Previous Versions
+            </div>
+
+            
+            <div id="archive-selector">
+            
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2021-05-01/topics/variant-analysis/tutorials/tb-variant-analysis/tutorial.html" title="Version 2021-05-01">2021-05-01</a>
+            
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2021-04-01/topics/variant-analysis/tutorials/tb-variant-analysis/tutorial.html" title="Version 2021-04-01">2021-04-01</a>
+            
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2021-03-01/topics/variant-analysis/tutorials/tb-variant-analysis/tutorial.html" title="Version 2021-03-01">2021-03-01</a>
+            
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/" title="Older Versions">Older Versions</a>
+            </div>
+
+        </div>
+
     </div>
 </li>
 
@@ -412,7 +435,7 @@
 }
     </script>
 
-    <section class="tutorial">
+    <section class="tutorial topic-variant-analysis">
         <h1 data-toc-skip>M. tuberculosis Variant Analysis</h1>
         
 
@@ -1441,6 +1464,8 @@ ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR124/042/SRR12416842/SRR12416842_2.fastq.gz
 
                     
 
+                    
+
                     <h1>Feedback</h1>
                     <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.</p>
 
@@ -1477,7 +1502,7 @@ ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR124/042/SRR12416842/SRR12416842_2.fastq.gz
                     <h1>Citing this Tutorial</h1>
                     <p>
                         <ol>
-                            <li id="citation-text">Peter van Heusden, Simon Gladman, Thoba Lose, 2021 <b>M. tuberculosis Variant Analysis (Galaxy Training Materials)</b>. <a href="/training-material/topics/variant-analysis/tutorials/tb-variant-analysis/tutorial.html">/training-material/topics/variant-analysis/tutorials/tb-variant-analysis/tutorial.html</a> Online; accessed TODAY
+                            <li id="citation-text">Peter van Heusden, Simon Gladman, Thoba Lose, 2021 <b>M. tuberculosis Variant Analysis (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/variant-analysis/tutorials/tb-variant-analysis/tutorial.html">https://training.galaxyproject.org/training-material/topics/variant-analysis/tutorials/tb-variant-analysis/tutorial.html</a> Online; accessed TODAY
                             </li>
                             <li>
                             Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
@@ -1497,7 +1522,7 @@ ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR124/042/SRR12416842/SRR12416842_2.fastq.gz
     year = "2021",
     month = "05",
     day = "18"
-    url = "\url{/training-material/topics/variant-analysis/tutorials/tb-variant-analysis/tutorial.html}",
+    url = "\url{https://training.galaxyproject.org/training-material/topics/variant-analysis/tutorials/tb-variant-analysis/tutorial.html}",
     note = "[Online; accessed TODAY]"
 }
 @article{Batut_2018,
@@ -1525,15 +1550,15 @@ document.getElementById("citation-code").innerHTML = document.getElementById("ci
 document.getElementById("citation-text").innerHTML = document.getElementById("citation-text").innerHTML.replace("TODAY", d.toDateString());
 </script>
 
+                    <h3><i class="far fa-thumbs-up" aria-hidden="true"></i><span class="visually-hidden">congratulations</span> Congratulations on successfully completing this tutorial!</h3>
+
+                    
+
+                    
+
                 </div>
             </div>
         </div>
-
-        <h3><i class="far fa-thumbs-up" aria-hidden="true"></i><span class="visually-hidden">congratulations</span> Congratulations on successfully completing this tutorial!</h3>
-
-        
-
-        
     </section>
 </div>
 

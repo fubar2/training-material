@@ -150,6 +150,9 @@
                 <label data-value="rainbow" class="btn btn-secondary">
                     <input type="radio" name="options" id="rainbow" autocomplete="off"> Rainbow
                 </label>
+                <label data-value="progress" class="btn btn-secondary">
+                    <input type="radio" name="options" id="progress" autocomplete="off">🏳️‍🌈
+                </label>
                 <label data-value="halloween" class="btn btn-secondary">
                     <input type="radio" name="options" id="halloween" autocomplete="off"> 🎃
                 </label>
@@ -159,6 +162,26 @@
             </div>
 
         </div>
+
+        <div class="dropdown-item">
+            <div>
+                <i class="fas fa-history" aria-hidden="true"></i><span class="visually-hidden">galaxy-rulebuilder-history</span> Previous Versions
+            </div>
+
+            
+            <div id="archive-selector">
+            
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2021-05-01/topics/transcriptomics/" title="Version 2021-05-01">2021-05-01</a>
+            
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2021-04-01/topics/transcriptomics/" title="Version 2021-04-01">2021-04-01</a>
+            
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2021-03-01/topics/transcriptomics/" title="Version 2021-03-01">2021-03-01</a>
+            
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/" title="Older Versions">Older Versions</a>
+            </div>
+
+        </div>
+
     </div>
 </li>
 
@@ -278,7 +301,7 @@
             
             
               
-                <h3>Introduction</h3>
+                <h3 id="st-introduction">Introduction</h3>
                 Start here if you are new to RNA-Seq analysis in Galaxy </br></br>
                 <table class="table table-responsive table-striped" >
   <thead>
@@ -302,6 +325,10 @@
 
   
   
+    
+
+    
+    
     
 
     
@@ -833,11 +860,11 @@
         
     
         
-    
-        
         <a class="dropdown-item" href="https://clipseq.usegalaxy.eu/" title="CLIP-Explorer">
             CLIP-Explorer
         </a>
+        
+    
         
     
         
@@ -1048,7 +1075,7 @@
 
 
               
-                <h3>End-to-End Analysis</h3>
+                <h3 id="st-end-to-end-analysis">End-to-End Analysis</h3>
                 These tutorials take you from raw sequencing reads to pathway analysis </br></br>
                 <table class="table table-responsive table-striped" >
   <thead>
@@ -1185,11 +1212,11 @@
         
     
         
-    
-        
         <a class="dropdown-item" href="https://clipseq.usegalaxy.eu/" title="CLIP-Explorer">
             CLIP-Explorer
         </a>
+        
+    
         
     
         
@@ -2014,13 +2041,17 @@
 
     
     
+    
+
+    
+    
   </tbody>
 </table>
 
 
 
               
-                <h3>Single-cell RNA-seq</h3>
+                <h3 id="st-single-cell-rna-seq">Single-cell RNA-seq</h3>
                 Tutorials about analysis of single-cell RNA-seq data </br></br>
                 <table class="table table-responsive table-striped" >
   <thead>
@@ -2044,6 +2075,10 @@
 
   
   
+    
+
+    
+    
     
 
     
@@ -2348,11 +2383,11 @@
         
     
         
-    
-        
         <a class="dropdown-item" href="https://clipseq.usegalaxy.eu/" title="CLIP-Explorer">
             CLIP-Explorer
         </a>
+        
+    
         
     
         
@@ -3079,12 +3114,6 @@
         
     
         
-        <a class="dropdown-item" href="http://bf2i-galaxy.insa-lyon.fr:8080/" title="BF2I-MAP">
-            BF2I-MAP
-        </a>
-        
-    
-        
         <a class="dropdown-item" href="http://galaxy.ugent.be/" title="BioBix">
             BioBix
         </a>
@@ -3147,6 +3176,12 @@
         
         <a class="dropdown-item" href="http://corgat.cloud.ba.infn.it/galaxy" title="CorGAT">
             CorGAT
+        </a>
+        
+    
+        
+        <a class="dropdown-item" href="https://coralsnp.science.psu.edu/galaxy/" title="CoralSNP">
+            CoralSNP
         </a>
         
     
@@ -3231,12 +3266,6 @@
         
         <a class="dropdown-item" href="https://humancellatlas.usegalaxy.eu/" title="Human Cell Atlas">
             Human Cell Atlas
-        </a>
-        
-    
-        
-        <a class="dropdown-item" href="http://huttenhower.sph.harvard.edu/galaxy/" title="Huttenhower Lab">
-            Huttenhower Lab
         </a>
         
     
@@ -3345,6 +3374,12 @@
         
         <a class="dropdown-item" href="http://pepsimili.e-nios.com:8080/" title="PepSimili">
             PepSimili
+        </a>
+        
+    
+        
+        <a class="dropdown-item" href="https://galaxy.bio.di.uminho.pt/" title="PhagePromotor">
+            PhagePromotor
         </a>
         
     
@@ -4318,7 +4353,7 @@
 
 
               
-                <h3>Single-cell RNA-seq: Case Study</h3>
+                <h3 id="st-single-cell-rna-seq-case-study">Single-cell RNA-seq: Case Study</h3>
                 Tutorials using a single published single-cell RNA-seq dataset for a variety of analyses </br></br>
                 <table class="table table-responsive table-striped" >
   <thead>
@@ -4342,6 +4377,10 @@
 
   
   
+    
+
+    
+    
     
 
     
@@ -4875,6 +4914,10 @@
         
     
         
+        <a class="dropdown-item" href="https://usegalaxy.org" title="UseGalaxy.org (Main)">
+            UseGalaxy.org (Main)
+        </a>
+        
     
         
     
@@ -5034,7 +5077,7 @@
 
 
               
-                <h3>Visualisation</h3>
+                <h3 id="st-visualisation">Visualisation</h3>
                 Tutorials covering data visualisation </br></br>
                 <table class="table table-responsive table-striped" >
   <thead>
@@ -5407,11 +5450,11 @@
         
     
         
-    
-        
         <a class="dropdown-item" href="https://climate.usegalaxy.eu/" title="Climate Science Workbench">
             Climate Science Workbench
         </a>
+        
+    
         
     
         
@@ -5493,8 +5536,6 @@
         
     
         
-    
-        
         <a class="dropdown-item" href="https://metagenomics.usegalaxy.eu/" title="Metagenomics">
             Metagenomics
         </a>
@@ -5510,6 +5551,8 @@
         <a class="dropdown-item" href="https://nanopore.usegalaxy.eu/" title="NanoGalaxy">
             NanoGalaxy
         </a>
+        
+    
         
     
         
@@ -5600,6 +5643,13 @@
           <td class="tutorial_title">
           Visualization of RNA-Seq results with Volcano Plot
           <div class="">
+          
+            
+<span class="level introductory" title="Introductory Tutorial">
+  <i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="visually-hidden">level</span> <i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="visually-hidden">level</span> <i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="visually-hidden">level</span>
+</span>
+
+
           
           
           </div>
@@ -5699,11 +5749,11 @@
         
     
         
-    
-        
         <a class="dropdown-item" href="https://climate.usegalaxy.eu/" title="Climate Science Workbench">
             Climate Science Workbench
         </a>
+        
+    
         
     
         
@@ -5781,8 +5831,6 @@
         
     
         
-    
-        
         <a class="dropdown-item" href="https://metagenomics.usegalaxy.eu/" title="Metagenomics">
             Metagenomics
         </a>
@@ -5798,6 +5846,8 @@
         <a class="dropdown-item" href="https://nanopore.usegalaxy.eu/" title="NanoGalaxy">
             NanoGalaxy
         </a>
+        
+    
         
     
         
@@ -5875,6 +5925,93 @@
         
     
     </ul>
+
+
+ </td>
+            
+          
+         </tr>
+         
+       
+    
+    
+
+    
+      
+        <tr>
+          <td class="tutorial_title">
+          Visualization of RNA-Seq results with Volcano Plot in R
+          <div class="">
+          
+            
+<span class="level intermediate" title="Intermediate Tutorial">
+  <i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="visually-hidden">level</span> <i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="visually-hidden">level</span> <i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="visually-hidden">level</span>
+</span>
+
+
+          
+          
+          </div>
+          </td>
+          
+            <td> 
+
+    </span>
+
+ </td>
+            <td> 
+    <span class="btn-group">
+        <a href="/training-material/topics/transcriptomics/tutorials/rna-seq-viz-with-volcanoplot-r/tutorial.html" class="btn btn-default" title="Follow the tutorial">
+            <i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span>
+        </a>
+        <a href="#" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Follow the tutorial in a different language">
+            <span class="sr-only">Toggle Dropdown</span>
+        </a>
+        <ul class="dropdown-menu">
+        
+         <div class="dropdown-item"><strong>Automatic translations</strong></div>
+        
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=fr&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Ftranscriptomics%2Ftutorials%2Frna-seq-viz-with-volcanoplot-r%2Ftutorial.html&edit-text=&act=url" title="">
+                Français
+            </a>
+        
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ja&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Ftranscriptomics%2Ftutorials%2Frna-seq-viz-with-volcanoplot-r%2Ftutorial.html&edit-text=&act=url" title="">
+                日本語
+            </a>
+        
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=es&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Ftranscriptomics%2Ftutorials%2Frna-seq-viz-with-volcanoplot-r%2Ftutorial.html&edit-text=&act=url" title="">
+                Español
+            </a>
+        
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=pt&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Ftranscriptomics%2Ftutorials%2Frna-seq-viz-with-volcanoplot-r%2Ftutorial.html&edit-text=&act=url" title="">
+                Português
+            </a>
+        
+            <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=ar&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Ftranscriptomics%2Ftutorials%2Frna-seq-viz-with-volcanoplot-r%2Ftutorial.html&edit-text=&act=url" title="">
+                العربية
+            </a>
+        
+        <a class="dropdown-item" href="https://translate.google.com/translate?hl=jp&sl=en&tl=&u=https%3A%2F%2Ftraining.galaxyproject.org%2Ftopics%2Ftranscriptomics%2Ftutorials%2Frna-seq-viz-with-volcanoplot-r%2Ftutorial.html&edit-text=&act=url" title="">
+            And more!
+        </a>
+    </span>
+
+ </td>
+
+            
+              <td> 
+<a class="topic-icon" href="https://zenodo.org/record/2529117">
+    <i class="far fa-copy" aria-hidden="true"></i><span class="visually-hidden">zenodo_link</span>
+</a>
+
+ </td>
+              <td> 
+ </td>
+              <td> 
+ </td>
+            
+            
+              <td> 
 
 
  </td>
@@ -6346,11 +6483,11 @@
         
     
         
-    
-        
         <a class="dropdown-item" href="https://clipseq.usegalaxy.eu/" title="CLIP-Explorer">
             CLIP-Explorer
         </a>
+        
+    
         
     
         
@@ -6696,11 +6833,11 @@
         
     
         
-    
-        
         <a class="dropdown-item" href="https://metagenomics.usegalaxy.eu/" title="Metagenomics">
             Metagenomics
         </a>
+        
+    
         
     
         
@@ -6942,11 +7079,11 @@
         
     
         
-    
-        
         <a class="dropdown-item" href="https://clipseq.usegalaxy.eu/" title="CLIP-Explorer">
             CLIP-Explorer
         </a>
+        
+    
         
     
         
@@ -7214,11 +7351,11 @@
         
     
         
-    
-        
         <a class="dropdown-item" href="https://clipseq.usegalaxy.eu/" title="CLIP-Explorer">
             CLIP-Explorer
         </a>
+        
+    
         
     
         
@@ -7588,11 +7725,11 @@
         
     
         
-    
-        
         <a class="dropdown-item" href="https://clipseq.usegalaxy.eu/" title="CLIP-Explorer">
             CLIP-Explorer
         </a>
+        
+    
         
     
         
@@ -7768,6 +7905,10 @@
     
 
     
+    
+    
+
+    
       
         <tr>
           <td class="tutorial_title">
@@ -7917,11 +8058,11 @@
         
     
         
-    
-        
         <a class="dropdown-item" href="https://clipseq.usegalaxy.eu/" title="CLIP-Explorer">
             CLIP-Explorer
         </a>
+        
+    
         
     
         
@@ -8277,7 +8418,7 @@
         <p>
     The content of the tutorials and website is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
 </p>
-        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/14ce5a0b4e08f6a32163c1eaf37f94c99c0e8ac8">14ce5a0b4e08f6a32163c1eaf37f94c99c0e8ac8</a></p>
+        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/21e643be5b116aaf55ef80b5dc4dc2a8980e1d91">21e643be5b116aaf55ef80b5dc4dc2a8980e1d91</a></p>
     </div>
 </footer>
 

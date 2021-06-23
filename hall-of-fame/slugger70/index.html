@@ -147,6 +147,9 @@
                 <label data-value="rainbow" class="btn btn-secondary">
                     <input type="radio" name="options" id="rainbow" autocomplete="off"> Rainbow
                 </label>
+                <label data-value="progress" class="btn btn-secondary">
+                    <input type="radio" name="options" id="progress" autocomplete="off">🏳️‍🌈
+                </label>
                 <label data-value="halloween" class="btn btn-secondary">
                     <input type="radio" name="options" id="halloween" autocomplete="off"> 🎃
                 </label>
@@ -156,6 +159,26 @@
             </div>
 
         </div>
+
+        <div class="dropdown-item">
+            <div>
+                <i class="fas fa-history" aria-hidden="true"></i><span class="visually-hidden">galaxy-rulebuilder-history</span> Previous Versions
+            </div>
+
+            
+            <div id="archive-selector">
+            
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2021-05-01/hall-of-fame/slugger70/" title="Version 2021-05-01">2021-05-01</a>
+            
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2021-04-01/hall-of-fame/slugger70/" title="Version 2021-04-01">2021-04-01</a>
+            
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2021-03-01/hall-of-fame/slugger70/" title="Version 2021-03-01">2021-03-01</a>
+            
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/" title="Older Versions">Older Versions</a>
+            </div>
+
+        </div>
+
     </div>
 </li>
 
@@ -307,6 +330,12 @@
 						
 					
 						
+					
+						
+					
+						
+					
+						
 						<li>
 							
 							
@@ -366,6 +395,20 @@
 						</li>
 						
 					
+						
+					
+						
+						<li>
+							
+							
+							<a href="/training-material/topics/admin">
+								Galaxy Server administration
+							</a>
+							/
+							<a href="/training-material//topics/admin/tutorials/upgrading/tutorial.html">
+							Upgrading Galaxy
+							</a>
+						</li>
 						
 					
 						
@@ -436,6 +479,8 @@
 							De Bruijn Graph Assembly
 							</a>
 						</li>
+						
+					
 						
 					
 						
@@ -533,6 +578,8 @@
 						
 					
 						
+					
+						
 						<li>
 							
 							
@@ -544,6 +591,10 @@
 							Downloading and Deleting Data in Galaxy
 							</a>
 						</li>
+						
+					
+						
+					
 						
 					
 						
@@ -791,6 +842,8 @@
 						
 					
 						
+					
+						
 						<li>
 							
 							
@@ -802,6 +855,8 @@
 							Genome annotation with Prokka
 							</a>
 						</li>
+						
+					
 						
 					
 						
@@ -987,8 +1042,6 @@
 							Galaxy Monitoring
 							</a>
 						</li>
-						
-					
 						
 					
 						
@@ -1207,6 +1260,8 @@
 					
 						
 					
+						
+					
 					</ul>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
@@ -1276,30 +1331,6 @@ var topics = [
 	
 
 	
-		
-		
-		"Galaxy Server administration",
-	
-
-	
-
-	
-		
-		
-		"Galaxy Server administration",
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
 
 	
 
@@ -1311,6 +1342,42 @@ var topics = [
 		"Galaxy Server administration",
 	
 
+	
+
+	
+		
+		
+		"Galaxy Server administration",
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+		
+		"Galaxy Server administration",
+	
+
+	
+
+	
+		
+		
+		"Galaxy Server administration",
 	
 
 	
@@ -1354,21 +1421,25 @@ var topics = [
 	
 
 	
-		
-		
-		"Assembly",
-	
-
-	
-
-	
-
-	
 
 	
 		
 		
 		"Assembly",
+	
+
+	
+
+	
+
+	
+
+	
+		
+		
+		"Assembly",
+	
+
 	
 
 	
@@ -1552,20 +1623,6 @@ var topics = [
 	
 
 	
-		
-		
-		"Variant Analysis",
-	
-
-	
-
-	
-
-	
-
-	
-
-	
 
 	
 
@@ -1573,6 +1630,26 @@ var topics = [
 		
 		
 		"Variant Analysis",
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+		
+		"Variant Analysis",
+	
+
 	
 
 	
@@ -1679,6 +1756,8 @@ var topics = [
 
 	
 
+	
+
 
 	
 
@@ -1792,8 +1871,6 @@ var topics = [
 		
 		
 		"Galaxy Server administration",
-	
-
 	
 
 	
@@ -1928,6 +2005,8 @@ var topics = [
 		
 		
 		"Genome Annotation",
+	
+
 	
 
 	
@@ -2003,7 +2082,7 @@ var chart = new Chart(ctx, {
         <p>
     The content of the tutorials and website is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
 </p>
-        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/14ce5a0b4e08f6a32163c1eaf37f94c99c0e8ac8">14ce5a0b4e08f6a32163c1eaf37f94c99c0e8ac8</a></p>
+        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/21e643be5b116aaf55ef80b5dc4dc2a8980e1d91">21e643be5b116aaf55ef80b5dc4dc2a8980e1d91</a></p>
     </div>
 </footer>
 

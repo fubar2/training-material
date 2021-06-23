@@ -172,6 +172,9 @@
                 <label data-value="rainbow" class="btn btn-secondary">
                     <input type="radio" name="options" id="rainbow" autocomplete="off"> Rainbow
                 </label>
+                <label data-value="progress" class="btn btn-secondary">
+                    <input type="radio" name="options" id="progress" autocomplete="off">🏳️‍🌈
+                </label>
                 <label data-value="halloween" class="btn btn-secondary">
                     <input type="radio" name="options" id="halloween" autocomplete="off"> 🎃
                 </label>
@@ -181,6 +184,26 @@
             </div>
 
         </div>
+
+        <div class="dropdown-item">
+            <div>
+                <i class="fas fa-history" aria-hidden="true"></i><span class="visually-hidden">galaxy-rulebuilder-history</span> Previous Versions
+            </div>
+
+            
+            <div id="archive-selector">
+            
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2021-05-01/topics/statistics/tutorials/RNN/tutorial.html" title="Version 2021-05-01">2021-05-01</a>
+            
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2021-04-01/topics/statistics/tutorials/RNN/tutorial.html" title="Version 2021-04-01">2021-04-01</a>
+            
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/2021-03-01/topics/statistics/tutorials/RNN/tutorial.html" title="Version 2021-03-01">2021-03-01</a>
+            
+                <a class="btn btn-warning" href="https://training.galaxyproject.org/archive/" title="Older Versions">Older Versions</a>
+            </div>
+
+        </div>
+
     </div>
 </li>
 
@@ -380,7 +403,7 @@
 }
     </script>
 
-    <section class="tutorial">
+    <section class="tutorial topic-statistics">
         <h1 data-toc-skip>Deep Learning (Part 2) - Recurrent neural networks (RNN)</h1>
         
 
@@ -682,11 +705,11 @@
         
     
         
-    
-        
         <a class="dropdown-item" href="https://ml.usegalaxy.eu/" title="Machine Learning Workbench">
             Machine Learning Workbench
         </a>
+        
+    
         
     
         
@@ -747,6 +770,10 @@
     
         
     
+        
+        <a class="dropdown-item" href="https://usegalaxy.org.au" title="UseGalaxy.org.au">
+            UseGalaxy.org.au
+        </a>
         
     
         
@@ -988,7 +1015,7 @@ cost function via backpropagation.</p>
       <p>Create a new history for this tutorial</p>
 
       <!--SNIPPET-->
-      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-creating-a-new-history"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Creating a new history</h3>  <p>Click the <i class="fas fa-plus" aria-hidden="true"></i><span class="visually-hidden">new-history</span> icon at the top of the history panelIf the <i class="fas fa-plus" aria-hidden="true"></i><span class="visually-hidden">new-history</span> is missing:</p>  <ol>    <li>Click on the <i class="fas fa-cog" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-gear</span> icon (<strong>History options</strong>) on the top of the history panel</li>    <li>Select the option <strong>Create New</strong> from the menu</li>  </ol></blockquote>
+      <blockquote class="tip">  <h3 data-toc-skip="" id="-tip-creating-a-new-history"><i class="far fa-lightbulb" aria-hidden="true"></i><span class="visually-hidden"></span> Tip: Creating a new history</h3>  <p>Click the <i class="fas fa-plus" aria-hidden="true"></i><span class="visually-hidden">new-history</span> icon at the top of the history panel.If the <i class="fas fa-plus" aria-hidden="true"></i><span class="visually-hidden">new-history</span> is missing:</p>  <ol>    <li>Click on the <i class="fas fa-cog" aria-hidden="true"></i><span class="visually-hidden"><span class="notranslate">galaxy</span>-gear</span> icon (<strong>History options</strong>) on the top of the history panel</li>    <li>Select the option <strong>Create New</strong> from the menu</li>  </ol></blockquote>
     </li>
     <li>
       <p>Import the files from <a href="https://zenodo.org/record/4477881">Zenodo</a> or from the shared data library</p>
@@ -1373,6 +1400,8 @@ classification problem using RNN on IMDB movie reviews dataset.</p>
 </li></ol>
                     
 
+                    
+
                     <h1>Feedback</h1>
                     <p class="text-muted">Did you use this material as an instructor? Feel free to give us feedback on <a href="https://github.com/galaxyproject/training-material/issues/1452" target="_blank">how it went</a>.</p>
 
@@ -1409,7 +1438,7 @@ classification problem using RNN on IMDB movie reviews dataset.</p>
                     <h1>Citing this Tutorial</h1>
                     <p>
                         <ol>
-                            <li id="citation-text">Kaivan Kamali, 2021 <b>Deep Learning (Part 2) - Recurrent neural networks (RNN) (Galaxy Training Materials)</b>. <a href="/training-material/topics/statistics/tutorials/RNN/tutorial.html">/training-material/topics/statistics/tutorials/RNN/tutorial.html</a> Online; accessed TODAY
+                            <li id="citation-text">Kaivan Kamali, 2021 <b>Deep Learning (Part 2) - Recurrent neural networks (RNN) (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/statistics/tutorials/RNN/tutorial.html">https://training.galaxyproject.org/training-material/topics/statistics/tutorials/RNN/tutorial.html</a> Online; accessed TODAY
                             </li>
                             <li>
                             Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
@@ -1429,7 +1458,7 @@ classification problem using RNN on IMDB movie reviews dataset.</p>
     year = "2021",
     month = "05",
     day = "21"
-    url = "\url{/training-material/topics/statistics/tutorials/RNN/tutorial.html}",
+    url = "\url{https://training.galaxyproject.org/training-material/topics/statistics/tutorials/RNN/tutorial.html}",
     note = "[Online; accessed TODAY]"
 }
 @article{Batut_2018,
@@ -1457,19 +1486,15 @@ document.getElementById("citation-code").innerHTML = document.getElementById("ci
 document.getElementById("citation-text").innerHTML = document.getElementById("citation-text").innerHTML.replace("TODAY", d.toDateString());
 </script>
 
-                </div>
-            </div>
-        </div>
+                    <h3><i class="far fa-thumbs-up" aria-hidden="true"></i><span class="visually-hidden">congratulations</span> Congratulations on successfully completing this tutorial!</h3>
 
-        <h3><i class="far fa-thumbs-up" aria-hidden="true"></i><span class="visually-hidden">congratulations</span> Congratulations on successfully completing this tutorial!</h3>
+                    
 
-        
-
-        
-        <blockquote class="agenda follow-up">
-            <strong class="follow-up"><i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="visually-hidden">curriculum</span> Do you want to extend your knowledge? Follow one of our recommended follow-up trainings:</strong>
-            <ul>
-                
+                    
+                    <blockquote class="agenda follow-up">
+                        <strong class="follow-up"><i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="visually-hidden">curriculum</span> Do you want to extend your knowledge? Follow one of our recommended follow-up trainings:</strong>
+                        <ul>
+                            
     <li>
     
         
@@ -1526,9 +1551,13 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
     
     </li>
 
-            </ul>
-        </blockquote>
-        
+                        </ul>
+                    </blockquote>
+                    
+
+                </div>
+            </div>
+        </div>
     </section>
 </div>
 
